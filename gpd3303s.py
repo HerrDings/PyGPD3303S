@@ -349,4 +349,13 @@ class GPD4303S(GPD3303S):
             raise RuntimeError('Invalid channel number: %d was given.' % channel)
         return True
 
+class GPD2303S(GPD3303S):
+    def isValidChannel(self, channel):
+        """
+        Check if the given channel number is valid or not. Only channels 1 to 2
+        are allowed.
+        """
 
+        if not (1 <= channel <= 2):
+            raise RuntimeError('Invalid channel number: %d was given.' % channel)
+        return True
